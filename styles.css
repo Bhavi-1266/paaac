@@ -1,0 +1,255 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-color: #000000; 
+  color: #e0e0e0;
+}
+
+/* Header Section */
+header {
+  position: relative;
+  height: 100vh; /* Full-screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: 5rem; /* Larger font size */
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 6px; /* Thicker spacing */
+  color: #ffffff;
+  font-weight: bold; /* Bold text */
+}
+
+header p {
+  font-size: 2rem; /* Larger subtitle */
+  margin-top: 10px;
+  color: #d4d4d4;
+  font-weight: 500; /* Slightly thicker subtitle */
+}
+
+.logo {
+  width: 15%; /* Logo size as a percentage of the heading */
+  max-width: 200px; /* Maximum size for larger screens */
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Blinking Stars */
+.blinking-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Solar System */
+.solar-system {
+  position: relative;
+  width: 100%;
+  height: 150px; /* Height for planets */
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 5%; /* Sun on the left */
+  transform: translateY(-50%);
+  width: 150px; /* Full circle sun */
+  height: 150px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  box-shadow: 0 0 100px #ffcc00, 0 0 200px #ffcc00;
+  z-index: 1; /* Ensure sun is above planets */
+}
+
+.planet {
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.8); /* Brighter glow */
+  z-index: 2; /* Ensure planets are above star field */
+}
+
+.mercury {
+  width: 15px;
+  height: 15px;
+  background-color: #b3a38f;
+  margin-left: 220px;
+}
+
+.venus {
+  width: 20px;
+  height: 20px;
+  background-color: #e7c7a9;
+}
+
+.earth {
+  width: 25px;
+  height: 25px;
+  background-color: #6eb5ff;
+}
+
+.mars {
+  width: 22px;
+  height: 22px;
+  background-color: #d64f00;
+}
+
+.jupiter {
+  width: 45px;
+  height: 45px;
+  background-color: #ffd18f;
+}
+
+.saturn {
+  width: 40px;
+  height: 40px;
+  background-color: #f2d4a6;
+  position: relative;
+}
+
+.saturn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 70px;
+  height: 20px;
+  background-color: rgba(242, 212, 166, 0.8);
+  border-radius: 50%;
+}
+
+.uranus {
+  width: 35px;
+  height: 35px;
+  background-color: #a6e7ff;
+}
+
+.neptune {
+  width: 35px;
+  height: 35px;
+  background-color: #6b8cff;
+}
+
+/* About Section */
+.about-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #1e1e1e; /* Slightly lighter dark theme */
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  max-width: 800px;
+  color: #d4d4d4;
+}
+
+/* Events Section */
+.events-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #121212; /* Same as body for seamless transition */
+}
+
+.events-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.event-card {
+  background-color: #1e1e1e; /* Dark theme card */
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 15px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.event-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.event-card h3 {
+  color: #ffffff;
+}
+
+.event-card p {
+  color: #d4d4d4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 3.5rem; /* Adjusted for smaller screens */
+  }
+
+  header p {
+    font-size: 1.5rem; /* Adjusted for smaller screens */
+  }
+
+  .logo {
+    width: 25%; /* Smaller logo for mobile */
+  }
+
+  .about-section h2,
+  .events-section h2 {
+    font-size: 2rem;
+  }
+}
